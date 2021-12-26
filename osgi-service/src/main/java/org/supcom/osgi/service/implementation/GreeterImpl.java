@@ -1,10 +1,10 @@
-package org.supcom.osgidemo.service.implementation;
+package org.supcom.osgi.service.implementation;
 
 import org.osgi.framework.BundleActivator;
 import org.osgi.framework.BundleContext;
 import org.osgi.framework.ServiceReference;
 import org.osgi.framework.ServiceRegistration;
-import org.supcom.osgidemo.service.definition.Greeter;
+import org.supcom.osgi.service.definition.Greeter;
 
 import java.util.Hashtable;
 

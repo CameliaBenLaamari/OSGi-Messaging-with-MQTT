@@ -1,0 +1,16 @@
+Manifest-Version: 1.0
+Bnd-LastModified: 1640552163895
+Build-Jdk: 1.8.0_301
+Built-By: Camelia Ben Laamari
+Bundle-Activator: org.supcom.osgi.client.Client
+Bundle-ManifestVersion: 2
+Bundle-Name: osgi-client
+Bundle-SymbolicName: org.supcom.osgi-client
+Bundle-Version: 1.0
+Created-By: Apache Maven Bundle Plugin
+Export-Package: org.supcom.osgi.client;version="1.0.0";uses:="org.osgi.f
+ ramework"
+Import-Package: org.osgi.framework;version="[1.8,2)",org.supcom.osgi.ser
+ vice.definition;version="[1.0,2)"
+Require-Capability: osgi.ee;filter:="(&(osgi.ee=JavaSE)(version=11))"
+Tool: Bnd-4.2.0.201903051501

@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
-        <artifactId>osgi-demo</artifactId>
+        <artifactId>osgi</artifactId>
         <groupId>org.supcom</groupId>
         <version>1.0</version>
     </parent>
@@ -30,9 +28,9 @@
                         <Bundle-SymbolicName>${project.groupId}.${project.artifactId}</Bundle-SymbolicName>
                         <Bundle-Name>${project.artifactId}</Bundle-Name>
                         <Bundle-Version>${project.version}</Bundle-Version>
-                        <Bundle-Activator>org.supcom.osgidemo.service.implementation.GreeterImpl</Bundle-Activator>
-                        <Private-Package>org.supcom.osgidemo.service.implementation</Private-Package>
-                        <Export-Package>org.supcom.osgidemo.service.definition</Export-Package>
+                        <Bundle-Activator>org.supcom.osgi.service.implementation.GreeterImpl</Bundle-Activator>
+                        <Private-Package>org.supcom.osgi.service.implementation</Private-Package>
+                        <Export-Package>org.supcom.osgi.service.definition</Export-Package>
                     </instructions>
                 </configuration>
             </plugin>

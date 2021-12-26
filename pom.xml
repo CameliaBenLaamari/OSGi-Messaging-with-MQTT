@@ -1,22 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-    <modelVersion>4.0.0</modelVersion>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
+    <modelVersion>4.0.0</modelVersion>
     <groupId>org.supcom</groupId>
-    <artifactId>osgi-demo</artifactId>
+    <artifactId>osgi</artifactId>
     <version>1.0</version>
+
     <modules>
         <module>osgi-bundle</module>
         <module>osgi-service</module>
         <module>osgi-client</module>
     </modules>
+
     <packaging>pom</packaging>
+
     <properties>
         <osgi.version>6.0.0</osgi.version>
         <maven-bundle-plugin.version>4.2.1</maven-bundle-plugin.version>
     </properties>
+
     <build>
         <pluginManagement>
             <plugins>
@@ -29,6 +31,7 @@
             </plugins>
         </pluginManagement>
     </build>
+
     <dependencyManagement>
         <dependencies>
             <dependency>
@@ -39,4 +42,5 @@
             </dependency>
         </dependencies>
     </dependencyManagement>
+
 </project>

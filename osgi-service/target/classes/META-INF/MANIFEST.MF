@@ -1,0 +1,15 @@
+Manifest-Version: 1.0
+Bnd-LastModified: 1640552163485
+Build-Jdk: 1.8.0_301
+Built-By: Camelia Ben Laamari
+Bundle-Activator: org.supcom.osgi.service.implementation.GreeterImpl
+Bundle-ManifestVersion: 2
+Bundle-Name: osgi-service
+Bundle-SymbolicName: org.supcom.osgi-service
+Bundle-Version: 1.0
+Created-By: Apache Maven Bundle Plugin
+Export-Package: org.supcom.osgi.service.definition;version="1.0.0"
+Import-Package: org.osgi.framework;version="[1.8,2)",org.supcom.osgi.ser
+ vice.definition;version="[1.0,2)"
+Require-Capability: osgi.ee;filter:="(&(osgi.ee=JavaSE)(version=11))"
+Tool: Bnd-4.2.0.201903051501

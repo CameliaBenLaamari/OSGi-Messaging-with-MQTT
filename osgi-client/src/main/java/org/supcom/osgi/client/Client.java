@@ -1,7 +1,7 @@
-package org.supcom.osgidemo.client;
+package org.supcom.osgi.client;
 
 import org.osgi.framework.*;
-import org.supcom.osgidemo.service.definition.Greeter;
+import org.supcom.osgi.service.definition.Greeter;
 
 public class Client implements BundleActivator, ServiceListener {
 

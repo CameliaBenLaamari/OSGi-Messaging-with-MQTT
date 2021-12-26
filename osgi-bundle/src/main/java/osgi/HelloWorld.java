@@ -1,4 +1,4 @@
-package osgidemo;
+package osgi;
 
 import org.osgi.framework.BundleActivator;
 import org.osgi.framework.BundleContext;
