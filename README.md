@@ -1,4 +1,4 @@
-# OSGi
+# OSGi Messaging with MQTT
 
 ## Setup
 1. Apache Karaf:
