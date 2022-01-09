@@ -19,32 +19,25 @@
             <plugin>
                 <groupId>org.apache.felix</groupId>
                 <artifactId>maven-bundle-plugin</artifactId>
-                <version>4.2.1</version>
                 <extensions>true</extensions>
                 <configuration>
                     <instructions>
                         <Bundle-SymbolicName>${project.groupId}.${project.artifactId}</Bundle-SymbolicName>
                         <Bundle-Name>${project.name}</Bundle-Name>
                         <Bundle-Version>${project.version}</Bundle-Version>
+                        <Export-Package>org.supcom.osgi</Export-Package>
+                        <Export-Package>org.supcom.osgi.HelloWorld</Export-Package>
                         <Bundle-Activator>org.supcom.osgi.HelloWorld</Bundle-Activator>
-                        <Private-Package>org.supcom.osgi</Private-Package>
                     </instructions>
                 </configuration>
             </plugin>
         </plugins>
     </build>
     <dependencies>
-        <!--dependency>
+        <dependency>
             <groupId>org.osgi</groupId>
             <artifactId>osgi.core</artifactId>
             <version>7.0.0</version>
-            <scope>provided</scope>
-        </dependency-->
-        <dependency>
-            <groupId>org.osgi</groupId>
-            <artifactId>org.osgi.core</artifactId>
-            <version>6.0.0</version>
-            <scope>provided</scope>
         </dependency>
     </dependencies>
 </project>

@@ -1,18 +1,23 @@
 package org.supcom.osgi.client;
 
+import org.eclipse.paho.client.mqttv3.MqttClient;
+import org.eclipse.paho.client.mqttv3.MqttException;
 import org.osgi.framework.*;
-import org.supcom.osgi.service.definition.Greeter;
+import org.supcom.osgi.service.definition.MqttAdapter;
+import org.supcom.osgi.service.implementation.MqttCallBack;
 
 public class Client implements BundleActivator, ServiceListener {
 
     private BundleContext ctx;
     private ServiceReference serviceReference;
+    private static MqttClient client;
 
-    public void start(BundleContext ctx) {
+    public void start(BundleContext ctx) throws MqttException {
         this.ctx = ctx;
         try {
-            ctx.addServiceListener(this, "(objectclass=" + Greeter.class.getName() + ")");
-        } catch (InvalidSyntaxException ise) {
+            System.out.println("== START SUBSCRIBER ==");
+            client = new MqttClient("tcp://localhost:1883", MqttClient.generateClientId());
+        } catch (MqttException ise) {
             ise.printStackTrace();
         }
     }
@@ -30,8 +35,15 @@ public class Client implements BundleActivator, ServiceListener {
             case (ServiceEvent.REGISTERED):
                 System.out.println("Notification of service registered.");
                 serviceReference = serviceEvent.getServiceReference();
-                Greeter service = (Greeter) (ctx.getService(serviceReference));
-                System.out.println(service.sayHiTo("John"));
+                MqttAdapter service = (MqttAdapter) (ctx.getService(serviceReference));
+                client.setCallback(new MqttCallBack());
+                try {
+                    client.connect();
+                    client.subscribe("OSGi_MQTT");
+                } catch (MqttException e) {
+                    System.out.println(e);
+                }
+
                 break;
             case (ServiceEvent.UNREGISTERING):
                 System.out.println("Notification of service unregistered.");

@@ -1,0 +1,3 @@
+org\supcom\osgi\service\implementation\MqttCallBack.class
+org\supcom\osgi\service\definition\MqttAdapter.class
+org\supcom\osgi\service\implementation\MqttImpl.class
