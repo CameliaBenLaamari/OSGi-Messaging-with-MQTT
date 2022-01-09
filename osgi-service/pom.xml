@@ -21,15 +21,17 @@
             <plugin>
                 <groupId>org.apache.felix</groupId>
                 <artifactId>maven-bundle-plugin</artifactId>
-                <version>4.2.1</version>
                 <extensions>true</extensions>
                 <configuration>
                     <instructions>
                         <Bundle-SymbolicName>${project.groupId}.${project.artifactId}</Bundle-SymbolicName>
                         <Bundle-Name>${project.artifactId}</Bundle-Name>
                         <Bundle-Version>${project.version}</Bundle-Version>
-                        <Bundle-Activator>org.supcom.osgi.service.implementation.GreeterImpl</Bundle-Activator>
-                        <Private-Package>org.supcom.osgi.service.implementation</Private-Package>
+                        <Export-Package>org.supcom.osgi-service.bundle</Export-Package>
+                        <Bundle-Activator>org.supcom.osgi.service.implementation.MqttImpl</Bundle-Activator>
+                        <Export-Package>org.supcom.osgi.service.implementation</Export-Package>
+                        <Export-Package>org.eclipse.paho.client.mqttv3</Export-Package>
+                        <Export-Package>org.eclipse.paho.client.mqttv3.internal</Export-Package>
                         <Export-Package>org.supcom.osgi.service.definition</Export-Package>
                     </instructions>
                 </configuration>
@@ -37,17 +39,15 @@
         </plugins>
     </build>
     <dependencies>
-        <!--dependency>
+        <dependency>
             <groupId>org.osgi</groupId>
             <artifactId>osgi.core</artifactId>
             <version>7.0.0</version>
-            <scope>provided</scope>
-        </dependency-->
+        </dependency>
         <dependency>
-            <groupId>org.osgi</groupId>
-            <artifactId>org.osgi.core</artifactId>
-            <version>6.0.0</version>
-            <scope>provided</scope>
+            <groupId>org.eclipse.paho</groupId>
+            <artifactId>org.eclipse.paho.client.mqttv3</artifactId>
+            <version>1.2.5</version>
         </dependency>
     </dependencies>
 </project>

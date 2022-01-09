@@ -15,8 +15,9 @@
     <packaging>pom</packaging>
 
     <properties>
-        <osgi.version>6.0.0</osgi.version>
-        <maven-bundle-plugin.version>4.2.1</maven-bundle-plugin.version>
+        <osgi.version>7.0.0</osgi.version>
+        <maven-bundle-plugin.version>5.1.4</maven-bundle-plugin.version>
+        <inherited>true</inherited>
     </properties>
 
     <build>
@@ -27,6 +28,14 @@
                     <artifactId>maven-bundle-plugin</artifactId>
                     <version>${maven-bundle-plugin.version}</version>
                     <extensions>true</extensions>
+                    <configuration>
+                        <instructions>
+                            <Export-Package>org.supcom.osgi</Export-Package>
+                            <Export-Package>org.supcom.osgi-bundle</Export-Package>
+                            <Export-Package>org.supcom.osgi-client</Export-Package>
+                            <Export-Package>org.supcom.osgi-service</Export-Package>
+                        </instructions>
+                    </configuration>
                 </plugin>
             </plugins>
         </pluginManagement>
@@ -36,9 +45,8 @@
         <dependencies>
             <dependency>
                 <groupId>org.osgi</groupId>
-                <artifactId>org.osgi.core</artifactId>
-                <version>${osgi.version}</version>
-                <scope>provided</scope>
+                <artifactId>osgi.core</artifactId>
+                <version>7.0.0</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
